@@ -1,0 +1,46 @@
+[
+ {
+   "company_name": "1 Green Planet",
+   "device_exported": "LCD",
+   "device_id": "WA546164",
+   "source_name": "1 Green Planet",
+   "source": "[47.49902565156954, -122.19699064903253]",
+   "target_name": "EWC Group Recyclers/eWaste Center",
+   "target": "[47.39918336447823, -122.23015963874957]",
+   "source_precise": 1,
+   "target_precise": 1
+ },
+ {
+   "company_name": "1 Green Planet",
+   "device_exported": "LCD",
+   "device_id": "WA546164",
+   "source_name": "EWC Group Recyclers/eWaste Center",
+   "source": "[47.39918336447823, -122.23015963874957]",
+   "target_name": "Canada, Vancouver Port area",
+   "target": "[49.311940748353905, -123.10969537747143]",
+   "source_precise": 1,
+   "target_precise": 0
+ },
+ {
+   "company_name": "1 Green Planet",
+   "device_exported": "LCD",
+   "device_id": "WA546164",
+   "source_name": "Canada, Vancouver Port area",
+   "source": "[49.311940748353905, -123.10969537747143]",
+   "target_name": "Hong Kong, Port of Hong Kong",
+   "target": "[22.333333, 114.133333]",
+   "source_precise": 0,
+   "target_precise": 0
+ },
+ {
+   "company_name": "1 Green Planet",
+   "device_exported": "LCD",
+   "device_id": "WA546164",
+   "source_name": "Hong Kong, Port of Hong Kong",
+   "source": "[22.333333, 114.133333]",
+   "target_name": "Hong Kong, New Territories",
+   "target": "[22.3704, 114.1234]",
+   "source_precise": 0,
+   "target_precise": 0
+ }
+]

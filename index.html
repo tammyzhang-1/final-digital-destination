@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Final Digital Destination</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
+<style>
+    body { 
+        margin: 0; 
+        padding: 0; }
+    #map { 
+        position: absolute; 
+        top: 0; 
+        bottom: 0; 
+        width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v12',
+        center: [-98.5795, 39.8283],
+        zoom: 2
+    });
+
+    // map initialization
+    map.on('load', () => {
+        // ------------ generating nodes ------------
+        map.addSource('nodes', {
+            type: 'geojson',
+            data: 'data/nodes.geojson'
+        });
+
+        map.addLayer({
+            'id': 'nodes-layer',
+            'type': 'circle',
+            'source': 'nodes',
+            'paint': {
+                'circle-radius': 4,
+                'circle-stroke-width': 2,
+                'circle-color': 'gray',
+                'circle-stroke-color': 'white'
+            }
+        });
+
+        // ------------ generating connections ------------
+        function createFeature(data, doesCrossAntimeridian) {
+            const feature = JSON.parse(data);
+
+            let featureArray = feature.features
+
+            featureArray.forEach((f) => {
+                if (f.properties.cross == 1) {
+                    const startLng = f.geometry.coordinates[0][0];
+                    const endLng = f.geometry.coordinates[1][0];
+
+                    if (endLng - startLng >= 180) {
+                        f.geometry.coordinates[1][0] -= 360;
+                    } else if (endLng - startLng < 180) {
+                        f.geometry.coordinates[1][0] += 360;
+                }
+            }
+            })
+            return feature;
+        }
+
+        fetch('data/test.geojson')
+            .then(response => response.text())
+            .then(data => {
+                map.addLayer({
+                    'id': 'routes',
+                    'type': 'line',
+                    'source': {
+                        'type': 'geojson',
+                        'data': createFeature(data, true)
+                    },
+                    'layout': { 'line-cap': 'round' },
+                    'paint': {
+                        'line-color': 'gray',
+                        'line-width': 4
+                    }
+                });
+
+                map.addLayer({
+                    'id': 'routes-highlighted',
+                    'type': 'line',
+                    'source': {
+                        'type': 'geojson',
+                        'data': createFeature(data, true)
+                    },
+                    'layout': { 'line-cap': 'round' },
+                    'paint': {
+                        'line-color': 'red',
+                        'line-width': 10
+                    },
+                    'filter': ['in', 'device_id', '']
+                });
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
+
+
+    map.on('click', 'routes', (e) => {
+
+    });
+
+    map.on('mousemove', 'routes', (e) => {
+        map.getCanvas().style.cursor = 'pointer';
+        const feature = e.features[0];
+
+        console.log(feature.properties)
+        
+        const relatedRoutes = map.querySourceFeatures('routes', {
+            sourceLayer: 'routes',
+            filter: ['in', 'device_id', feature.properties.device_id]
+        });;
+
+        map.setFilter('routes-highlighted', [
+            'in',
+            'device_id',
+            feature.properties.device_id
+        ]);
+    });
+
+    map.on('mouseleave', 'routes', () => {
+        map.getCanvas().style.cursor = '';
+        map.setFilter('routes-highlighted', ['in', 'device_id', '']);
+    });
+</script>
+
+</body>
+</html>
