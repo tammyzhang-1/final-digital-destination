@@ -1,13 +1,1 @@
-[
-    {
-        "device_id": "WA546164",
-        "export_chain": ["1 Green Planet", "EWC Group Recyclers/eWaste Center", "Canada, Vancouver Port area", "Hong Kong, Port of Hong Kong", "Hong Kong, New Territories"],
-        "company_name": "1 Green Planet",
-        "company_position": [0],
-        "device_type": "LCD",
-        "certification": "None",
-        "isri_member": "No",
-        "misrepresentation_concern": "No",
-        "epa_mentions": "No"
-    }
-]
+[{"device_id":"WA546164","company_name":"1 Green Planet","company_position":"[0]","device_type":"LCD","certification":"None","isri_member":"No","misrepresentation_concern":"No","epa_mentions":"No"}]
