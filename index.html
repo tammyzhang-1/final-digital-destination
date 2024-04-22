@@ -4,137 +4,237 @@
 <meta charset="utf-8">
 <title>Final Digital Destination</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
 <link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
 <style>
-    body { 
-        margin: 0; 
-        padding: 0; }
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    body, button {
+        font-family: 'Lato', sans-serif;
+        color: rgb(232, 232, 232);
+    }
+
+    h1 {
+        font-weight: normal;
+        color: white;
+        border-bottom: solid thin gray;
+    }
+
+    .label {
+        margin-bottom: 0.125em;
+    }
+
     #map { 
         position: absolute; 
         top: 0; 
+        left: 0;
         bottom: 0; 
-        width: 100%; }
+        width: 70%; 
+    }
+
+    #sidebar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 30%;
+        background-color: black;
+        border-left: solid thin gray;
+        overflow-y: scroll;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+    }
+
 </style>
 </head>
 <body>
-<div id="map"></div>
-<script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/satellite-streets-v12',
-        center: [-98.5795, 39.8283],
-        zoom: 2
-    });
+    <div id="map"></div>
+    <aside id="sidebar">
+        <h1>Final Digital Destination</h1>
+        <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
+        <p>In 2016, the Basel Action Network conducted a 2016 study where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
+            which were then delivered to charities, retailers and recyclers across the U.S.
+        </p>
+        <p>Under the Basel Convention, it is illegal for developing countries to import hazardous e-wastes from the
+            United States. 96% of the exports revealed by BAN 's 2016 study were most likely illegal. 
+        </p>
+        <p>Track a device by hovering or clicking on a node or path.</p>
+    </aside>
 
-    // map initialization
-    map.on('load', () => {
-        // ------------ generating nodes ------------
-        map.addSource('nodes', {
-            type: 'geojson',
-            data: 'data/nodes.geojson'
+    <!-- handling map rendering -->
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v12',
+            center: [-98.5795, 39.8283],
+            zoom: 2
         });
 
-        map.addLayer({
-            'id': 'nodes-layer',
-            'type': 'circle',
-            'source': 'nodes',
-            'paint': {
-                'circle-radius': 4,
-                'circle-stroke-width': 2,
-                'circle-color': 'gray',
-                'circle-stroke-color': 'white'
+        let earthRadiusMeters = 6371000;
+
+        const requestData = async function() {
+            let devices = await d3.json("data/devices.json", d3.autoType);
+
+            function populateSidebar(id) {
+                const sidebar = document.getElementById('sidebar');
+                const sidebarWidth = sidebar.offsetWidth;
+                const sidebarHeight = sidebar.offsetHeight;
+
+                const imgWidth = Math.floor(sidebarWidth - 40);
+                const imgHeight = Math.floor((sidebarHeight * 0.3) - 20);
+
+                var result = devices.find(device => device.device_id == id);
+
+                let initialCoords = JSON.parse(result.initial_coords);
+                let finalCoords = JSON.parse(result.final_coords);
+                
+                sidebar.innerHTML = '';
+                sidebar.innerHTML = `
+                    <h1>Final Digital Destination</h1>
+                    <p>Device ID: ${id}</p>
+                    <p>Device Type: ${result.device_type}</p>
+                    <p>Recycling Company: ${result.company_name}</p>
+                    <p class="label">Initial Location: ${result.location}</p>
+                    <img
+                    src="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/pin-l-embassy+f74e4e(${initialCoords[0]},${initialCoords[1]})/${initialCoords[0]},${initialCoords[1]},12/${imgWidth}x${imgHeight}?access_token=pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w"
+                    alt="A picture of the area in which this device originated." />
+                    <p class="label">Final Location: ${result.final_location}</p>
+                    <img
+                    src="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/pin-l-embassy+f74e4e(${finalCoords[0]},${finalCoords[1]})/${finalCoords[0]},${finalCoords[1]},12/${imgWidth}x${imgHeight}?access_token=pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w"
+                    alt="A picture of the area in which this device ended up." />  
+                `;
             }
+
+            map.on('click', 'routes', (e) => {
+            const feature = e.features[0];
+            populateSidebar(feature.properties.device_id);
         });
 
-        // ------------ generating connections ------------
-        function createFeature(data, doesCrossAntimeridian) {
-            const feature = JSON.parse(data);
+        map.on('mousemove', 'routes', (e) => {
+            map.getCanvas().style.cursor = 'pointer';
+            const feature = e.features[0];
 
-            let featureArray = feature.features
+            populateSidebar(feature.properties.device_id);
+            
+            const relatedRoutes = map.querySourceFeatures('routes', {
+                sourceLayer: 'routes',
+                filter: ['in', 'device_id', feature.properties.device_id]
+            });;
 
-            featureArray.forEach((f) => {
-                if (f.properties.cross == 1) {
-                    const startLng = f.geometry.coordinates[0][0];
-                    const endLng = f.geometry.coordinates[1][0];
+            map.setFilter('routes-highlighted', [
+                'in',
+                'device_id',
+                feature.properties.device_id
+            ]);
+        });
 
-                    if (endLng - startLng >= 180) {
-                        f.geometry.coordinates[1][0] -= 360;
-                    } else if (endLng - startLng < 180) {
-                        f.geometry.coordinates[1][0] += 360;
-                }
-            }
-            })
-            return feature;
+        map.on('mouseleave', 'routes', () => {
+            map.getCanvas().style.cursor = '';
+            map.setFilter('routes-highlighted', ['in', 'device_id', '']);
+            sidebar.innerHTML = `
+                <h1>Final Digital Destination</h1>
+                <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
+                <p>In 2016, the Basel Action Network conducted a 2016 study where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
+                    which were then delivered to charities, retailers and recyclers across the U.S.
+                </p>
+                <p>Under the Basel Convention, it is illegal for developing countries to import hazardous e-wastes from the
+                    United States. 96% of the exports revealed by BAN 's 2016 study were most likely illegal. 
+                </p>
+                <p>Track a device by hovering or clicking on a node or path.</p>
+            `;
+        });
         }
 
-        fetch('data/edges.geojson')
-            .then(response => response.text())
-            .then(data => {
-                map.addLayer({
-                    'id': 'routes',
-                    'type': 'line',
-                    'source': {
-                        'type': 'geojson',
-                        'data': createFeature(data, true)
-                    },
-                    'layout': { 'line-cap': 'round' },
-                    'paint': {
-                        'line-color': 'gray',
-                        'line-width': 4
-                    }
-                });
-
-                map.addLayer({
-                    'id': 'routes-highlighted',
-                    'type': 'line',
-                    'source': {
-                        'type': 'geojson',
-                        'data': createFeature(data, true)
-                    },
-                    'layout': { 'line-cap': 'round' },
-                    'paint': {
-                        'line-color': 'red',
-                        'line-width': 10
-                    },
-                    'filter': ['in', 'device_id', '']
-                });
-
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
+        // map initialization
+        map.on('load', () => {
+            // ------------ generating nodes ------------
+            map.addSource('nodes', {
+                type: 'geojson',
+                data: 'data/nodes_new.geojson'
             });
-    });
 
+            map.addLayer({
+                'id': 'nodes-layer',
+                'type': 'circle',
+                'source': 'nodes',
+                'paint': {
+                    'circle-radius': 4,
+                    'circle-stroke-width': 1,
+                    'circle-color': 'gray',
+                    'circle-stroke-color': 'white'
+                }
+            });
 
-    map.on('click', 'routes', (e) => {
+            // ------------ generating connections ------------
+            function createFeature(data, doesCrossAntimeridian) {
+                const feature = JSON.parse(data);
+                let featureArray = feature.features
 
-    });
+                featureArray.forEach((f) => {
+                    if (f.properties.cross == 1) {
+                        const startLng = f.geometry.coordinates[0][0];
+                        const endLng = f.geometry.coordinates[1][0];
 
-    map.on('mousemove', 'routes', (e) => {
-        map.getCanvas().style.cursor = 'pointer';
-        const feature = e.features[0];
+                        if (endLng - startLng >= 180) {
+                            f.geometry.coordinates[1][0] -= 360;
+                        } else if (endLng - startLng < 180) {
+                            f.geometry.coordinates[1][0] += 360;
+                    }
+                    f.properties.distance = (d3.geoLength(f.geometry) * earthRadiusMeters) / 1609;
+                }
+                })
+                return feature;
+            }
 
-        console.log(feature.properties)
-        
-        const relatedRoutes = map.querySourceFeatures('routes', {
-            sourceLayer: 'routes',
-            filter: ['in', 'device_id', feature.properties.device_id]
-        });;
+            fetch('data/edges_new.geojson')
+                .then(response => response.text())
+                .then(data => {
+                    map.addLayer({
+                        'id': 'routes',
+                        'type': 'line',
+                        'source': {
+                            'type': 'geojson',
+                            'data': createFeature(data, true)
+                        },
+                        'layout': { 'line-cap': 'round' },
+                        'paint': {
+                            'line-color': 'gray',
+                            'line-width': 2
+                        }
+                    });
 
-        map.setFilter('routes-highlighted', [
-            'in',
-            'device_id',
-            feature.properties.device_id
-        ]);
-    });
+                    map.addLayer({
+                        'id': 'routes-highlighted',
+                        'type': 'line',
+                        'source': {
+                            'type': 'geojson',
+                            'data': createFeature(data, true)
+                        },
+                        'layout': { 'line-cap': 'round' },
+                        'paint': {
+                            'line-color': 'red',
+                            'line-width': 10
+                        },
+                        'filter': ['in', 'device_id', '']
+                    });
 
-    map.on('mouseleave', 'routes', () => {
-        map.getCanvas().style.cursor = '';
-        map.setFilter('routes-highlighted', ['in', 'device_id', '']);
-    });
-</script>
-
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+            });
+            requestData();
+        });
+    </script>
 </body>
 </html>
