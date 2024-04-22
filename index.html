@@ -55,9 +55,20 @@
         padding-bottom: 0.25em;
     }
 
+    #projection-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: rgb(149, 149, 149);
+        padding: 0.5em;
+        cursor: pointer;
+        font-size: 0.75em;
+    }
+
 </style>
 </head>
 <body>
+  <main>
     <div id="map"></div>
     <aside id="sidebar">
         <h1>Final Digital Destination</h1>
@@ -70,6 +81,9 @@
         </p>
         <p>Track a device by hovering or clicking on a node or path.</p>
     </aside>
+  </main>
+
+  <div id="projection-input">Change to 2D projection</div>
 
     <!-- handling map rendering -->
     <script>
@@ -79,6 +93,11 @@
             style: 'mapbox://styles/mapbox/satellite-streets-v12',
             center: [-98.5795, 39.8283],
             zoom: 2
+        });
+
+        d3.select("#projection-input").on("click", function() {
+            map.setProjection(map.getProjection().name === "mercator" ? "globe" : "mercator");
+            this.innerHTML = map.getProjection().name === "mercator" ? "Change to 3D projection" : "Change to 2D projection";
         });
 
         let earthRadiusMeters = 6371000;
@@ -92,7 +111,7 @@
                 const sidebarHeight = sidebar.offsetHeight;
 
                 const imgWidth = Math.floor(sidebarWidth - 40);
-                const imgHeight = Math.floor((sidebarHeight * 0.3) - 20);
+                const imgHeight = Math.floor((sidebarHeight * 0.33) - 20);
 
                 var result = devices.find(device => device.device_id == id);
 
@@ -117,43 +136,60 @@
             }
 
             map.on('click', 'routes', (e) => {
-            const feature = e.features[0];
-            populateSidebar(feature.properties.device_id);
-        });
+                const feature = e.features[0];
+                populateSidebar(feature.properties.device_id);
+                d3.select("#sidebar").classed("clicked", true);
+                const relatedRoutes = map.querySourceFeatures('routes', {
+                        sourceLayer: 'routes',
+                        filter: ['in', 'device_id', feature.properties.device_id]
+                    });;
 
-        map.on('mousemove', 'routes', (e) => {
-            map.getCanvas().style.cursor = 'pointer';
-            const feature = e.features[0];
+                    map.setFilter('routes-highlighted', [
+                        'in',
+                        'device_id',
+                        feature.properties.device_id
+                    ]);
+            });
 
-            populateSidebar(feature.properties.device_id);
-            
-            const relatedRoutes = map.querySourceFeatures('routes', {
-                sourceLayer: 'routes',
-                filter: ['in', 'device_id', feature.properties.device_id]
-            });;
+            map.on('mousemove', 'routes', (e) => {
+                map.getCanvas().style.cursor = 'pointer';
+                if (!d3.select("#sidebar").classed("clicked")) {
+                    const feature = e.features[0];
 
-            map.setFilter('routes-highlighted', [
-                'in',
-                'device_id',
-                feature.properties.device_id
-            ]);
-        });
+                    populateSidebar(feature.properties.device_id);
+                    
+                    const relatedRoutes = map.querySourceFeatures('routes', {
+                        sourceLayer: 'routes',
+                        filter: ['in', 'device_id', feature.properties.device_id]
+                    });;
 
-        map.on('mouseleave', 'routes', () => {
-            map.getCanvas().style.cursor = '';
-            map.setFilter('routes-highlighted', ['in', 'device_id', '']);
-            sidebar.innerHTML = `
-                <h1>Final Digital Destination</h1>
-                <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
-                <p>In 2016, the Basel Action Network conducted a 2016 study where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
-                    which were then delivered to charities, retailers and recyclers across the U.S.
-                </p>
-                <p>Under the Basel Convention, it is illegal for developing countries to import hazardous e-wastes from the
-                    United States. 96% of the exports revealed by BAN 's 2016 study were most likely illegal. 
-                </p>
-                <p>Track a device by hovering or clicking on a node or path.</p>
-            `;
-        });
+                    map.setFilter('routes-highlighted', [
+                        'in',
+                        'device_id',
+                        feature.properties.device_id
+                    ]);
+                }
+            });
+
+            map.on('mouseleave', 'routes', () => {
+                map.getCanvas().style.cursor = '';
+                if (!d3.select("#sidebar").classed("clicked")) {
+                    map.setFilter('routes-highlighted', ['in', 'device_id', '']);
+                    if (!d3.select("#sidebar").classed("clicked")) {
+                        sidebar.innerHTML = `
+                        <h1>Final Digital Destination</h1>
+                        <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
+                        <p>In 2016, the Basel Action Network conducted a 2016 study where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
+                            which were then delivered to charities, retailers and recyclers across the U.S.
+                        </p>
+                        <p>Under the Basel Convention, it is illegal for developing countries to import hazardous e-wastes from the
+                            United States. 96% of the exports revealed by BAN 's 2016 study were most likely illegal. 
+                        </p>
+                        <p>Track a device by hovering or clicking on a node or path.</p>
+                    `;
+                    }
+                }  
+            });
         }
 
         // map initialization
@@ -209,8 +245,9 @@
                         },
                         'layout': { 'line-cap': 'round' },
                         'paint': {
-                            'line-color': 'gray',
-                            'line-width': 2
+                            'line-color': 'lightgray',
+                            'line-width': 3,
+                            'line-opacity': 0.7
                         }
                     });
 
@@ -224,7 +261,7 @@
                         'layout': { 'line-cap': 'round' },
                         'paint': {
                             'line-color': 'red',
-                            'line-width': 10
+                            'line-width': 5
                         },
                         'filter': ['in', 'device_id', '']
                     });
