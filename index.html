@@ -346,7 +346,7 @@
                 sidebar.innerHTML = `
                     <span id="close-detail" class="">x</span>
                     <h1 id="desktop-header">Final Digital Destination</h1>
-                    <img src="images/${result.device_type}.svg" alt="device icon" id="device-icon" />
+                    <img src="images/${(result["device_type"]).toLowerCase()}.svg" alt="device icon" id="device-icon" />
                     <p>Device ${id}, a <span class="bold">${result.device_type}</span>, originated from <span class="bold">${result.location}</span>. It passed through <span class="bold">${resultList.length}</span> locations, including recycler <span class="bold green">${result.company_name}</span>, before reaching its final destination ${getDistance(finalCoords, initialCoords)}</span> miles away in <span class="bold">${result.final_location}</span>.</p>
                     <p class="reduce-margin-bottom">Route Taken:</p>
                     <p class="instruction">Click on a location name below to be taken there on the map!</p>
