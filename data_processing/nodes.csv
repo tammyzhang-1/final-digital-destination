@@ -19,7 +19,7 @@ NV353413,17,"Hong Kong, New Territories ","[114.019274, 22.423244]",1
 CA549390,18,Recycling Event at Eliot Middle School,"[-118.13098919025249, 34.18319568783581]",1
 CA549390,19,Attan Recycling Corp,"[-117.70934439496996, 34.00004410331367]",1
 CA549390,20,Advance Trading Corp ,"[-117.659305, 34.059311]",1
-CA549390,21,WTB Electronics Recycling Import & Export,"[-117.89691402570422, 33.74740440684496]",1
+CA549390,21,WTB Electronics Recycling Import & Export,"[-117.897295, 33.747121]",1
 CA549390,22,Port of Long Beach,"[-118.2164027066185, 33.75403604662242]",0
 CA549390,23,"Cambodia, Unverified location (Krong Preah Sihnaouk port area) ","[103.50137915753281, 10.642753097996945]",0
 CA549390,24,"Cambodia, Unverified location (Phnom Penh area)","[104.91787357108755, 11.569222198370339]",0
@@ -36,7 +36,7 @@ CA552709,34,"Hong Kong, New Territories ","[114.071367, 22.48509]",1
 CA552709,35,"Hong Kong, New Territories ","[114.01992, 22.455738]",1
 CA552709,36,"Hong Kong, New Territories ","[114.003833, 22.485871]",1
 CCA545745,37,"All eWaste collection event in Santa Clarita, CA","[-118.541739267885, 34.393247873697874]",0
-CCA545745,38,"All eWaste HQ, Sun Valley, CA (34.228201, -118.385998) ","[-118.385998, 34.228201]",1
+CCA545745,38,"All eWaste HQ, Sun Valley, CA ","[-118.385998, 34.228201]",1
 CCA545745,39,IQA Metals ,"[-117.6895369240572, 33.99408744384333]",1
 CCA545745,40,Port of Long Beach ,"[-118.2164027066185, 33.75403604662242]",0
 CCA545745,41,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
@@ -52,3 +52,350 @@ IL163523,50,ECR World ,"[-117.69497257795065, 33.99177714145301]",1
 IL163523,51,"Port of Long Beach, CA","[-118.2164027066185, 33.75403604662242]",0
 IL163523,52,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
 IL163523,53,"Hong Kong, New Territories ","[114.002787, 22.436384]",1
+CA551248,54,Attan Recycling Corp,"[-117.709278, 34.000353]",1
+CA551248,55,"Port of Long Beach, CA","[-118.2164027066185, 33.75403604662242]",0
+CA551248,56,"Taiwan, Unverified location, Port area in New Taipei City, Bali District","[121.3795004430545, 25.15243483182471]",0
+CA551248,57,"Taiwan, Unverified location. Taoyuan City, Guanyin District","[121.11437638892617, 25.03978062110914]",0
+OH166039,58,"Goodwill - Wooster, OH (Dell Reconnect Location)","[-81.94117128986848, 40.843940187671436]",1
+OH166039,59,Avnet,"[-82.918673, 39.854467]",1
+OH166039,60,"Unverified location, Columbus, OH ","[-82.99976920263906, 39.96441760400086]",0
+OH166039,61,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+OH166039,62,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OH166039,63,"China, Unverified location, Dongguan, Guang-dong","[113.75816284502564, 23.026806624028946]",0
+OH166039,64,"China, Unverified location, Near Guiyu","[116.35186285034011, 23.317118673866133]",0
+NV353470,65,Blind Center of Nevada,"[-115.12544977474842, 36.182627312764446]",1
+NV353470,66,"Mexico, Mexicali area.","[-115.4474774140139, 32.625484622186505]",0
+CA542981,67,Remitek Inc,"[-118.27227387561584, 33.89367947808764]",1
+CA542981,68,Blue Star Electronics,"[-122.054587, 37.620382]",1
+CA542981,69,"Unverified location, Fremont, CA area","[-121.98401324148254, 37.549458411301444]",0
+CA542981,70,"San Francisco/Oakland ports, CA","[-122.27946546657319, 37.79560433150933]",0
+CA542981,71,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+CA542981,72,"Hong Kong, New Territories ","[114.016853, 22.429514]",1
+CA540894,73,Blue Star Electronics,"[-122.054587, 37.620382]",1
+CA540894,74,"Warehouse in Business Park at 4806 Fremont Blvd., Fremont, CA","[-121.93761223236079, 37.470680747569816]",1
+CA540894,75,"Unverified Location, San Jose, CA area","[-121.87310214888795, 37.3378965415251]",0
+CA540894,76,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+CA540894,77,"Hong Kong, New Territories, Unverified location","[114.016853, 22.429514]",0
+CA530101,78,Cal Micro Recycling,"[-117.680484, 34.061649]",1
+CA530101,79,Growan Inc.,"[-118.0544218613511, 34.04598073892161]",1
+CA530101,80,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+CA530101,81,"Hong Kong, New Territories","[114.155034, 22.511]",0
+CA544961,82,Cal State Electronic Recycling,"[-117.20229057488113, 33.15989915512284]",1
+CA544961,83,"Port of Long Beach, CA","[-118.2164027066185, 33.75403604662242]",0
+CA544961,84,"Thailand, Port area near Bangkok","[100.57574823862694, 13.703734436927954]",0
+CA544961,85,"Thailand, Unverified location (Chon Buri, near Bangkok)","[101.24776639531811, 13.203325658718075]",0
+CA552287,86,e-Recycling of California,"[-118.17193900780762, 33.90591527645441]",1
+CA552287,87,Cal State Electronic Recycling,"[-117.20229057488113, 33.15989915512284]",1
+CA552287,88,"Unverified location, City of Industry, CA","[-117.95713416128936, 34.0176983780788]",0
+CA552287,89,"Port of Long Beach, CA","[-118.2164027066185, 33.75403604662242]",0
+CA552287,90,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+CA552287,91,"Hong Kong, New Territories ","[114.020101, 22.455844]",1
+IL162640,92,Chicago Surplus Computer,"[-88.02316404563412, 41.91149880787909]",1
+IL162640,93,"Unverified location, West Chicago, IL","[-88.20584481484458, 41.885470683062984]",0
+IL162640,94,"Unverified location, possibly trainyard, Chicago, IL","[-88.23127105845865, 41.883694049109664]",0
+IL162640,95,"Pakistan in Faisalabad, unverified location","[73.10027179447447, 31.43342649804699]",0
+IL163424,96,Chicago Surplus Computer,"[-88.02316404563412, 41.91149880787909]",1
+IL163424,97,UNITEC Recycling Corporation,"[-88.20874664736733, 41.86759565201253]",1
+IL163424,98,Chicago Surplus Computer,"[-88.02316404563412, 41.91149880787909]",1
+IL163424,99,"Unknown warehouse/field, Lombard, IL, GPS","[-88.023229, 41.913026]",1
+IL163424,100,"UAE, Dubai","[55.418836, 25.29782]",1
+IL616231,101,Chicago Surplus Computers,"[-88.02316404563412, 41.91149880787909]",1
+IL616231,102,Port Newark. NJ,"[-74.14698983552468, 40.69050319579005]",0
+IL616231,103,"Pakistan, Port Muhammard Bin Qasim, Karachi","[67.32677587824467, 24.766515950470446]",0
+IL616231,104,"Pakistan, Faisalabad. ","[73.077023, 31.417952]",1
+IL616371,105,Chicago Surplus Computers,"[-88.02316404563412, 41.91149880787909]",1
+IL616371,106,"Unverified locations: Travels along train route from Chicago to Gila Bend, AZ","[-112.73675949337905, 32.95092210121715]",0
+IL616371,107,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+IL616371,108,"Hong Kong, New Territories","[114.166338, 22.528651]",1
+MA353454,109,CRT Recycling,"[-71.01570121785039, 42.094003965195554]",1
+MA353454,110,"Unverified location (potentially in transit, one cell tower reading in Leominster, MA before export)","[-71.7619190409946, 42.525681047330416]",0
+MA353454,111,"Pakistan, Faisalabad","[73.126515, 31.412861]",1
+MA353454,112,"Pakistan, Samundri","[72.973192, 31.057368]",1
+MA616041,113,Earthworm Recycling,"[-71.08101885910216, 42.37685645102985]",1
+MA616041,114,Good Point Recycling,"[-71.00868494628169, 42.095818879839925]",1
+MA616041,115,"Unverified location (Chicago, IL)","[-87.64190493667708, 41.87789919024906]",0
+MA616041,116,"Port of Long Beach, CA","[-118.2164027066185, 33.75403604662242]",0
+MA616041,117,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+MA616041,118,"Hong Kong, New Territories ","[113.981578, 22.453373]",1
+OR356028,119,"Ecobinary, LLC","[-122.79801104359764, 45.37786787846321]",1
+OR356028,120,"Unverified location (Portland, OR)","[-122.67622428740123, 45.51099562441424]",0
+OR356028,121,"Trailer Yard used by Total Reclaim, Portland, OR","[-122.538103, 45.56183]",1
+OR356028,122,"Trailer Yard, Seattle, WA used by Total Reclaim","[-122.356476, 47.578592]",1
+OR356028,123,"Total Reclaim, Seattle, WA","[-122.325529, 47.584434]",1
+OR356028,124,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+OR356028,125,"Hong Kong, New Territories ","[113.966656, 22.450503]",1
+OR356028,126,"Hong Kong, New Territories ","[114.074766, 22.485588]",1
+NY615597,127,Mr. E-Waste ,"[-73.79838840328851, 42.251235954251555]",1
+NY615597,128,ecoTech Management ,"[-73.083087, 40.774097]",1
+NY615597,129,"Unverified location, Willingboro, NJ ","[-74.8913725425335, 40.028895216398766]",0
+NY615597,130,"Hong Kong, New Territories ","[113.965548, 22.447177]",1
+IL163523,131,ARCOA,"[-87.89594854561076, 42.36255066366812]",1
+IL163523,132,ECR World ,"[-117.694784, 33.99196]",1
+IL163523,133,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+IL163523,134,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+IL163523,135,"Hong Kong, New Territories ","[114.002787, 22.436384]",1
+CA356242,136,Electronics Recycling Services Inc.,"[-121.8835324323347, 37.4109175282768]",1
+CA356242,137,"Port of Oakland, CA","[-122.27911289136276, 37.795632739329115]",0
+CA356242,138,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA356242,139,"Hong Kong, New Territories ","[114.016906, 22.429382]",1
+CA356242,140,Hong Kong - Kowloon near port ,"[114.16024, 22.327304]",1
+CA356242,141,"Hong Kong, New Territories ","[114.207566, 22.534432]",1
+CA356242,142,"Hong Kong, New Territories ","[114.05527, 22.48053]",1
+CA552287,143,e-Recycling of California,"[-118.17193900780762, 33.90591527645441]",1
+CA552287,144,"Cal State Electronic Recycling (CSER, Inc.) ","[-117.20229057488113, 33.15989915512284]",1
+CA552287,145,"Unverified location, City of Industry, CA ","[-117.95713416128936, 34.0176983780788]",0
+CA552287,146,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+CA552287,147,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA552287,148,"Hong Kong, New Territories ","[114.020101, 22.455844]",1
+NJ616173,149,eRevival LLC,"[-74.16453779313935, 40.934937869267486]",1
+NJ616173,150,"Hong Kong, Unverified location","[114.1694, 22.3193]",0
+NJ616173,151,"Hong Kong, New Territories","[114.039361, 22.424206]",1
+OH160248,152,E-Scrap Solutions,"[ -81.63720224565351, 41.533303902571625]",1
+OH160248,153,"Unverified location, Greensburg, PA ","[-79.54199167931377, 40.301636066288374]",0
+OH160248,154,"Unverified location, Columbus, OH ","[-81.69008058452847, 41.496900079114916]",0
+OH160248,155,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+OH160248,156,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OH160248,157,"Hong Kong, New Territories ","[113.987396, 22.441442]",1
+Geo-Force3039211,158,E-Tech Management,"[-82.89519603224198, 39.933038225162086]",1
+Geo-Force3039211,159,"Hong Kong, New Territories ","[114.13932, 22.52876]",1
+OH154449,160,E-Tech Management,"[-82.89519603224198, 39.933038225162086]",1
+OH154449,161,"Canada, Unknown warehouse in Toronto ","[-79.26873, 43.83054]",1
+OH154449,162,"GEEP, Barrie, Ontario. Found our tracker and sent it back to us.","[-79.70664943492216, 44.37694703889162]",1
+OH356309,163,"e-Waste, LLC","[-81.45196918006177, 41.2054421337725]",1
+OH356309,164,"Unverified location, Cleveland, OH ","[-81.68939393902588, 41.496385785386146]",0
+OH356309,165,"Unverified location, likely in transit through Atlanta, GA ","[-84.39130649836557, 33.78780466957004]",0
+OH356309,166,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OH356309,167,"Hong Kong, New Territories ","[114.110072, 22.484294]",1
+CA543948,168,"EWC Group Recyclers (eWaste Center), Los Angeles, California","[-118.29210423251484, 34.0555174731558]",1
+CA543948,169,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+CA543948,170,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA543948,171,"Hong Kong, New Territories ","[113.989428, 22.471585]",1
+CA543948,172,"Hong Kong, New Territories ","[113.992414, 22.457417]",1
+CA551412,173,EZPC,"[-117.90344667485614, 33.74834075677473]",1
+CA551412,174,"Unknown warehouse at 2370 E Artesia Blvd, Long Beach, CA ","[-118.1647751613587, 33.87430098097361]",1
+CA551412,175,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+CA551412,176,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA551412,177,"Hong Kong, New Territories ","[113.989588, 22.471612]",1
+CA551412,178,"Hong Kong, Unverified location ","[114.1694, 22.3193]",0
+CA551412,179,"China, Foshan, Guangdong ","[113.107867, 23.150815]",1
+CA551412,180,"China, Guiyu area, Unverified area","[116.35186285034011, 23.317118673866133]",0
+OR350062,181,Far West Recycling,"[-122.53192354543962, 45.557886034463884]",1
+OR350062,182,"Unverified location, Vancouver, WA ","[-122.67238145165659, 45.62469518188771]",0
+OR350062,183,Golden Valley Trading ,"[-117.690472, 34.001151]",1
+OR350062,184,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+OR350062,185,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OR350062,186,"Hong Kong, New Territories ","[113.967598, 22.45147]",1
+OR350062,187,"Taiwan, Keelung City area, Unverified location ","[121.74130911097258, 25.12806534185235]",0
+OR350062,188,"Taiwan, Longjing District ","[120.549028, 24.177561]",1
+OR350062,189,"Taiwan, Liuying District ","[120.352853, 23.284257]",1
+OR350062,190,"Taiwan, Longling District","[120.549053, 24.177365]",1
+NV356143,191,Goodwill - Las Vegas (Dell Reconnect location),"[-115.10299585638576, 36.09908045887009]",1
+NV356143,192,Goodwill - North Las Vegas (Dell Reconnect location) ,"[-115.28784429999818, 36.28590153424602]",0
+NV356143,193,"Unverified location, Poway, CA ","[-117.03479732611633, 32.96305685790815]",0
+NV356143,194,Golden Valley Trading ,"[-117.690472, 34.001151]",1
+NV356143,195,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+NV356143,196,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NV356143,197,"Hong Kong, New Territories, Unverified location, Un ","[114.016853, 22.429514]",0
+NV356143,198,"Hong Kong, New Territories ","[113.967369, 22.451292]",1
+OH161584,199,Goodwill Easterseals - Wapakoneta - (Dell Reconnect location),"[-84.17872806089301, 40.5662581326352]",0
+OH161584,200,J&D Recyclers ,"[-84.15207294763039, 40.29420300137717]",1
+OH161584,201,"Unverified location, Dayton, OH ","[-84.18912493333492, 39.75633488800754]",0
+OH161584,202,"Goodwill Auto Auction site, Dayton, OH ","[-84.19759904573898, 39.83403941024599]",1
+OH161584,203,"Unverified location, Groveport, OH ","[-82.89095697619345, 39.853515177621944]",0
+OH161584,204,"Unverified location, Commerce, CA ","[-118.15865014486205, 34.000414089838]",0
+OH161584,205,"Unverified location, San Diego, CA","[-117.13650531987527, 32.71673099627898]",0
+OH161584,206,Golden Valley Trading ,"[-117.690472, 34.001151]",1
+OH161584,207,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+OH161584,208,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OH161584,209,"Hong Kong, New Territories ","[113.990091, 22.469679]",1
+OH161584,210,"Hong Kong, New Territories ","[114.025677, 22.445332]",1
+MI163325,211,"Goodwill - Oxford, MI (Dell Reconnect location)","[-83.25728516093089, 42.818479019745695]",0
+MI163325,212,"Goodwill - Flint, MI (Dell Reconnect location) ","[-83.7621596710891, 42.98279806901949]",0
+MI163325,213,"Unverified location, Warren, MI ","[-83.02640344700683, 42.49989228691551]",0
+MI163325,214,"Unverified location, Groveport, OH ","[-82.89095697619345, 39.853515177621944]",0
+MI163325,215,"Unverified location, Commerce City, CA ","[-118.15865014486205, 34.000414089838]",0
+MI163325,216,"Unverified location, San Diego, CA ","[-117.13650531987527, 32.71673099627898]",0
+MI163325,217,"Unverified location, City of Industry, CA ","[-117.95713416128936, 34.0176983780788]",0
+MI163325,218,Golden Valley Trading ,"[-117.690472, 34.001151]",1
+MI163325,219,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+MI163325,220,"Hong Kong, New Territories ","[114.08558, 22.502218]",1
+MI163325,221,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+MI163325,222,"Taiwan, Port of Keelung ","[121.7565526413724, 25.149297630417877]",0
+MI163325,223,"Taiwan, Miaoli County, Farm location ","[120.884154, 24.663495]",1
+MI163325,224,"Taiwan, MRTI Corporation","[120.820892, 24.632225]",1
+MI163325,225,"Taiwan, Houlong Township, Unverified location","[120.7868651544842, 24.616750921742554]",0
+MI163960,226,Great Lakes Recycling,"[-83.19854358978417, 42.486652806633444]",1
+MI163960,227,"Unverified location, Minneapolis, MN ","[-93.26729806099334, 44.97507267856616]",0
+MI163960,228,"Unknown warehouse, St. Paul, MN ","[-93.071178, 44.964379]",1
+MI163960,229,"Port Newark, NJ ","[-74.14698983552468, 40.69050319579005]",0
+MI163960,230,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+MI163960,231,"Hong Kong, New Territories ","[114.07212, 22.484895]",1
+MI163960,232,"Hong Kong, New Territories ","[114.02571, 22.412814]",1
+MI163960,233,"Taiwan, Kao-hsiung City Port, Unverified location ","[120.28550592248959, 22.600287695119572]",0
+MI163960,234,"Taiwan, Keelung City, Unverified location ","[121.74130911097258, 25.12806534185235]",0
+MI163960,235,"Taiwan, Zhunan Township, Unverified location ","[120.87977688416747, 24.70332474865474]",0
+MI163960,236,"Taiwan, Full AFC Technology Co. LTD ","[120.820191, 24.632458]",1
+MI158911,237,Green Earth Electronics Recycling,"[-86.43773283213523, 42.04325723888122]",1
+MI158911,238,"Unverified location, South Bend, IN ","[-86.2497953406666, 41.67443453359306]",0
+MI158911,239,"Unverified location, Groveport, OH ","[-82.89095697619345, 39.853515177621944]",0
+MI158911,240,"Unverified location, City of Industry, CA ","[-117.95713416128936, 34.0176983780788]",0
+MI158911,241,"Hong Kong, New Territories ","[114.085639, 22.502381]",1
+MI158911,242,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+MI158911,243,"Taiwan, Port of Keelung ","[121.7565526413724, 25.149297630417877]",0
+MI158911,244,"Taiwan, Miaoli County, Farm ","[120.88265, 24.664352]",1
+MA348371,245,Green Network Exchange,"[-71.14129367443925, 42.50666560832454]",1
+MA348371,246,"Canada, Kingston, Unverified location ","[-76.49517999219368, 44.237012893555146]",0
+MA348371,247,"Canada, Brampton, Unverified location ","[-79.7621129236814, 43.735040311910545]",0
+MA348371,248,"Canada, Barrie, Unverified location ","[-79.69078783205994, 44.39150219602071]",0
+MA348371,249,"Canada, Port of Vancouver ","[-123.10969537747143, 49.311940748353905]",0
+MA348371,250,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+MA348371,251,"China, Foshan, Guangdong, Unverified location","[113.12414400382127, 23.02264968162818]",0
+MI167110,252,Green Tech Recyclers,"[-86.43883513213524, 42.04316010656363]",1
+MI167110,253,"Canada, Toronto Recycling ","[-79.389702, 43.85819]",1
+MI167110,254,"Canada, Lawrence Metal Recycling ","[-79.270952, 43.758087]",1
+MI167110,255,"Canada, Barrie, Unverified location","[-79.69078783205994, 44.39150219602071]",0
+CA530101,256,Cal Micro Recycling,"[-117.68010936135055, 34.06146181400116]",1
+CA530101,257,Growan Inc. ,"[-118.05439, 34.046738]",1
+CA530101,258,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA530101,259,"Hong Kong, New Territories ","[114.155034, 22.511]",1
+CA545349,260,IMS Recycling,"[-117.0531118037263, 32.93979686950283]",1
+CA545349,261,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+CA545349,262,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA545349,263,"China, Guangzhou, Guangdong port area ","[113.28144133686642, 23.114204623406167]",0
+CA545349,264,"China, Guiyu area, Guangdong","[116.35186285034011, 23.317118673866133]",0
+OH160545,265,Inline Computer Recycling,"[-81.52697090307993, 41.056113427244746]",1
+OH160545,266,"Unverified location, Oakwood, OH ","[-84.17377522303899, 39.724859956556756]",0
+OH160545,267,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+OH160545,268,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OH160545,269,Hong Kong New Territories,"[114.160157, 22.521313]",1
+OH160545,270,"Hong Kong, New Territories ","[114.207772, 22.533514]",1
+OH160545,271,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OH160545,272,"China, Guanyaochong area ","[113.079272, 23.255857]",1
+IL166286,273,PCRR,"[-87.7448102321429, 41.89524652981661]",1
+IL166286,274,Intercon Solutions ,"[-87.62373, 41.512197]",1
+IL166286,275,"Unverified location, Brownsville, TX ","[-97.50099768194218, 25.994852490488288]",0
+IL166286,276,"Mexico, Matamoros, MexTek Company.","[-97.544914, 25.881682]",1
+WA551396,277,Interconnection,"[-122.34354971833831, 47.649363954151255]",1
+WA551396,278,"Unverified location, Chino, CA ","[-117.68712989747965, 34.011361309491235]",0
+WA551396,279,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+WA551396,280,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+WA551396,281,"Hong Kong, New Territories, Unverified location ","[114.016853, 22.429514]",0
+WA551396,282,"Hong Kong, New Territories, Unverified location","[114.016853, 22.429514]",0
+CCA545745,283,All eWaste collection event,"[-118.541739267885, 34.393247873697874]",0
+CCA545745,284,"All eWaste warehouse, Sun Valley, CA ","[-118.385998, 34.228201]",1
+CCA545745,285,IQA Metals ,"[-117.709722, 34.003262]",1
+CCA545745,286,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+CCA545745,287,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CCA545745,288,"Hong Kong, New Territories ","[113.9652, 22.447456]",1
+CA540910,289,ITAD Solutions,"[-122.399794, 37.644729]",1
+CA540910,290,T Electronics dba Silicon Valley Recycling ,"[-121.9483680870176, 37.38189261409373]",0
+CA540910,291,"Unverified location, Port of Oakland area ","[-122.27911289136276, 37.795632739329115]",0
+CA540910,292,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA540910,293,"Hong Kong, New Territories ","[114.167515, 22.503568]",1
+CA540910,294,"Hong Kong, New Territories ","[114.01718, 22.43878]",1
+CA540910,295,"Hong Kong, New Territories, (Unverified location) ","[114.1234, 22.3704]",0
+CA540910,296,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+CA540910,297,"Vietnam, Hai Phong Port ","[106.6896459916214, 20.865969580058625]",0
+CA540910,298,"Vietnam, Border crossing area to China, Unverified location ","[107.4986724004871, 21.59900225628668]",0
+CA540910,299,"China, Guangzhou, Guangdong, Unverified location","[113.2521306963394, 23.192897840407607]",0
+MA353728,300,M&K Recovery Group,"[-71.11042370326726, 42.65909397116672]",1
+MA353728,301,"Unverified location, Riverside, RI ","[-71.3647210278986, 41.7673478167691]",0
+MA353728,302,Techrecyclers LLC ,"[-74.1042601730791, 40.75024286472104]",0
+MA353728,303,"Unverified location, Delran, NJ ","[-74.95528328870209, 40.015592498455334]",0
+MA353728,304,"Port Newark, NJ ","[-74.14698983552468, 40.69050319579005]",0
+MA353728,305,"Hong Kong, New Territories ","[113.988408, 22.461697]",1
+MA353728,306,"China, Zhaoqing, Guangdong ","[112.802711, 23.102667]",1
+MA353728,307,"China, Outdoor processing yard in Qingyuan, Guangdong ","[113.015697, 23.646378]",1
+NY616561,308,Maven Technologies,"[-77.6616464167327, 43.16640782055266]",1
+NY616561,309,"Unverified location, Chicago, IL ","[-87.64190493667708, 41.87789919024906]",0
+NY616561,310,"Port of Long Beach, CA ","[-118.2164027066185, 33.75403604662242]",0
+NY616561,311,"Hong Kong, Unverified location ","[114.1694, 22.3193]",0
+NY616561,312,"Hong Kong, New Territories ","[113.982868, 22.459235]",1
+MA356275,313,Miller Recycling,"[ -71.23977108795685, 42.014542999971184]",1
+MA356275,314,Raw Material Recovery Corporation ,"[-71.99891604560023, 42.56484046925543]",1
+MA356275,315,"Unverified Location, Upstate NY ","[-73.7485, 42.6697]",0
+MA356275,316,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+MA356275,317,"Hong Kong, New Territories ","[114.021468, 22.456996]",1
+MA356275,318,"Hong Kong, New Territories ","[114.007242, 22.430843]",1
+MA356275,319,"Hong Kong, Port of Hong Kong","[114.133333, 22.333333]",0
+NJ613527,320,Monmouth Wire & Computer,"[-74.11164773222721, 40.23100748057729]",1
+NJ613527,321,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NJ613527,322,"Hong Kong, New Territories ","[114.02057, 22.456461]",1
+NJ613527,323,"Hong Kong, New Territories, Unverified location","[114.016853, 22.429514]",0
+NV353413,324,Nevada State Recycling,"[-115.16180688119586, 36.149843415024044]",1
+NV353413,325,TW Recycling,"[-115.1391, 36.1716]",0
+NV353413,326,Advance Trading Corp,"[-117.659313, 34.059492]",1
+NV353413,327,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NV353413,328,"Hong Kong, New Territories ","[114.019274, 22.423244]",1
+NJ616264,329,Newtech Recycling Inc.,"[-74.55388945496307, 40.540671518385125]",1
+NJ616264,330,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NJ616264,331,"Hong Kong, New Territories ","[114.15673, 22.514392]",1
+NJ616264,332,"Hong Kong, New Territories ","[114.141363, 22.528042]",1
+NJ616264,333,Hong Kong - New Territories ,"[114.16553, 22.528586]",1
+MI163531,334,"Goodwill North Cadillac, MI","[-85.4081982878374, 44.27879707107928]",1
+MI163531,335,"Goodwill Traverse, MI ","[-85.62142768966466, 44.732679392817204]",1
+MI163531,336,PADNOS,"[-85.677538, 42.880538]",1
+MI163531,337,Schupan and Sons Inc ,"[-85.54015550119445, 42.27140019733184]",0
+MI163531,338,"Unverified location, Morris, IL ","[-88.42190252946803, 41.35779852257932]",0
+MI163531,339,"Hong Kong, New Territories","[114.1234, 22.3704]",0
+OR349759,340,Recology Oregon Material Recovery,"[-122.70929548961658, 45.61377267580766]",1
+OR349759,341,"Total Reclaim, Portland, OR ","[-122.601684, 45.570506]",1
+OR349759,342,"Trailer Yard, Portland, OR, leased by Total Reclaim ","[-122.538029, 45.562104]",1
+OR349759,343,"Trailer Yard, Seattle, WA leased by Total Reclaim ","[-122.356476, 47.578592]",1
+OR349759,344,"Unverified location, South Seattle, WA, (presumed Total Reclaim) ","[-122.33092466267065, 47.548399834796726]",0
+OR349759,345,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+OR349759,346,"Hong Kong, New Territories, unverified location ","[114.016853, 22.429514]",0
+OR349759,347,"Hong Kong, New Territories ","[113.982363, 22.458612]",1
+NH353504,348,RMG Enterprise Incorporated,"[-71.33870083209186, 42.876371333493786]",1
+NH353504,349,"Unverified location, Wilmington, MA ","[-71.16949593001432, 42.546960537244374]",0
+NH353504,350,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NH353504,351,"Hong Kong, New Territories ","[113.982363, 22.458503]",1
+OR356457,352,RS David Recycling,"[-122.55784315890067, 45.41681437411923]",1
+OR356457,353,"Total Reclaim, Portland, OR ","[-122.601684, 45.570506]",1
+OR356457,354,"Mexico, Mexicali, TDM Facility, ","[-115.414334, 32.567901]",1
+NJ613543,355,SAMR Inc,"[-74.15936753223502, 40.075141481210615]",1
+NJ613543,356,"Unverified location, Middletown, NJ ","[-74.09835253992611, 40.390667496929424]",0
+NJ613543,357,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NJ613543,358,"Hong Kong, New Territories ","[114.142596, 22.522354]",1
+GA161576,359,Sarah\'s Trading,"[-84.26897834407661, 33.881002132870364]",1
+GA161576,360,"Unverified location, Charleston, SC port area ","[-79.92382350373299, 32.78152573418965]",0
+GA161576,361,"Hong Kong, New Territories ","[114.136601, 22.526614]",1
+GA161576,362,"Hong Kong, New Territories ","[114.155149, 22.511108]",1
+MI156857,363,Schupan and Sons Inc.,"[-85.534863, 42.272238]",1
+MI156857,364,"Unverified location, Kalamazoo, MI ","[-85.58788212294311, 42.29013072413441]",0
+MI156857,365,"Unverified Location, Cleveland, OH ","[-81.68939393902588, 41.496385785386146]",0
+MI156857,366,"China, Guiyu area","[116.35186285034011, 23.317118673866133]",0
+FL353546,367,SEER,"[-82.37648180392094, 27.960981334619493]",1
+FL353546,368,"Unverified location, St. Petersburg, FL ","[-82.64865677977437, 27.76948656654781]",0
+FL353546,369,"Unverified location, Port of Miami, FLarea ","[-80.17871337541818, 25.77886348827505]",0
+FL353546,370,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+FL353546,371,"Hong Kong, New Territories ","[114.128421, 22.517703]",1
+FL353546,372,"Hong Kong, Return to Port of Hong Kong","[114.133333, 22.333333]",0
+NY615795,373,"Town of Mahwah Recycling Center (SIMS Recycling Solutions Drop Off Center), Mahwah, NJ","[-74.14727477080817, 41.095064569620966]",1
+NY615795,374,"Unverified location, Newark, NJ ","[-74.17519236519374, 40.7343760296965]",0
+NY615795,375,"Hong Kong, New Territories ","[114.20025, 22.531212]",1
+CA551321,376,Tri-Valley Electronic Waste Recycling,"[-121.27593836807723, 37.98535658092174]",1
+CA551321,377,"Self-storage unit in Oakland, CA ","[-122.19603, 37.74847]",1
+CA551321,378,Kenya - Port Mombasa ,"[39.68121716800088, -4.057927011394692]",0
+CA551321,379,Warehouse in Kenya ,"[36.855495, -1.317222]",1
+NJ615555,380,Urban Renewal,"[-74.10522146596637, 40.72742885789958]",0
+NJ615555,381,"East Orange, NJ area ","[-74.183524, 40.768829]",1
+NJ615555,382,"Port Newark, NJ ","[-74.14698983552468, 40.69050319579005]",0
+NJ615555,383,"Dominican Republic, Port of Rio Haina ","[-70.01572065065542, 18.42020825839416]",0
+NJ615555,384,"Dominican Republic, Unverified location, Santiago De Los Caballeros area.","[-70.6922537089533, 19.475758773505344]",0
+MI157079,385,Valley City Electronic Recycling,"[-85.59704283023835, 42.90696574648548]",1
+MI157079,386,"Unverified location, San Bernadino, CA. ","[-117.28881185863227, 34.10906157511888]",0
+MI157079,387,"China, Tianjin Port ","[117.74606316111414, 38.982622823667995]",0
+MI157079,388,"China, Tianjin Shi warehouse ","[117.789698, 39.284632]",1
+MI157079,389,"China, Shangqiu, Henan ","[115.410953, 34.433973]",1
+NH356259,390,Windfield Alloy,"[-71.18500145997378, 42.858252420955615]",0
+NH356259,391,"Unverified location, Dover, NH ","[-70.87525758595383, 43.19606443211764]",0
+NH356259,392,"Unverified location, Northwood, NH ","[-71.1458240628893, 43.193303890658456]",0
+NH356259,393,"Unverified location, Worcester, MA ","[ -71.79950159113359, 42.262587337224964]",0
+NH356259,394,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NH356259,395,"China, Unverified location, Foshan, Guangdong area ","[113.12414400382127, 23.02264968162818]",0
+NH356259,396,"China - Another unverified location (Foshan, Guangdong)","[113.12414400382127, 23.02264968162818]",0
+NJ615662,397,Yesterday\'s Business Computers,"[-74.64469641687037, 40.487818290934314]",1
+NJ615662,398,Port Newark ,"[-74.14698983552468, 40.69050319579005]",0
+NJ615662,399,"Hong Kong, Port of Hong Kong ","[114.133333, 22.333333]",0
+NJ615662,400,"Hong Kong, New Territories ","[113.987466, 22.4531]",1

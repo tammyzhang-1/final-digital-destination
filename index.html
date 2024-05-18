@@ -40,12 +40,33 @@
         display: none !important;
     }
 
+    .bold {
+        font-weight: bold;
+    }
+
+    .green {
+        color: rgb(158, 244, 158);
+    }
+
     #map { 
         position: absolute; 
         top: 0; 
         left: 0;
         bottom: 0; 
         width: 70%; 
+    }
+
+    #close-detail {
+        margin: 0;
+        position: absolute;
+        right: 1em;
+        top: 0.5em;
+        z-index: 3;
+        font-size: 1.25em;
+    }
+
+    #close-detail:hover {
+        cursor: pointer;
     }
 
     #sidebar {
@@ -64,14 +85,54 @@
         box-sizing: border-box;
     }
 
-    #projection-input {
+    #device-icon {
+        display: block;
+        margin: auto;
+    }
+
+    #route-container {
+        position: relative;
+    }
+
+    #route-container p {
         position: absolute;
-        top: 0;
+        z-index: 2;
+        margin: 0;
+        transform: translate(30px, -50%);
+        font-size: 0.9em;
+    }
+
+    p.location-label:hover {
+        cursor: pointer;
+    }
+
+    #route-visualizer {
+        z-index: 1;
+    }
+
+    .reduce-margin-bottom {
+        margin-bottom: 0.15em;
+    }
+
+    .instruction {
+        font-size: 0.75em;
+        color: rgb(184, 184, 184);
+        font-style: italic;
+        margin: 0;
+        padding-bottom: 1em;
+    }
+
+    #type-filters {
+        position: absolute;
         left: 0;
         color: rgb(149, 149, 149);
-        padding: 0.5em;
+        padding-left: 0.5em;
         cursor: pointer;
         font-size: 0.75em;
+    }
+
+    #type-filters p {
+        margin-top: 0.5em;
     }
 
     @media (max-width: 730px) {
@@ -175,7 +236,7 @@
     </div>
     <div id="map"></div>
     <aside id="sidebar">
-        <span id="close-detail" class="hidden">x</span>
+        <p id="close-detail" class="hidden">x</p>
         <h1 id="desktop-header">Final Digital Destination</h1>
         <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
         <p>In 2016, the <a href="https://www.ban.org/">Basel Action Network</a> conducted a <a href="https://wiki.ban.org/images/1/12/ScamRecyclingReport-web.pdf">study</a> where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
@@ -188,7 +249,21 @@
     </aside>
   </main>
 
-  <div id="projection-input">Change to 2D projection</div>
+  <div id="type-filters">
+    <p id="projection-input">Change to 2D projection</p>
+    <label>
+        <input type="checkbox" id="LCD" name="LCD" value="LCD" checked>
+        LCD
+    </label><br>
+    <label>
+        <input type="checkbox" id="CRT" name="CRT" value="CRT" checked>
+        CRT
+    </label><br>
+    <label>
+        <input type="checkbox" id="Printer" name="Printer" value="Printer" checked>
+        Printer
+    </label>
+  </div>
 
     <!-- handling map rendering -->
     <script>
@@ -222,9 +297,28 @@
         });
 
         let earthRadiusMeters = 6371000;
+        let marker;
+
+        function getDistance([lon1, lat1], [lon2, lat2]) {
+            const toRad = deg => deg * Math.PI / 180;
+            const R = 3958.8;
+            const dLat = toRad(lat2 - lat1);
+            const dLon = toRad(lon2 - lon1);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return (R * c).toFixed(2);
+        }
 
         const requestData = async function() {
             let devices = await d3.json("data/devices.json", d3.autoType);
+            let nodesList = await d3.json("data/nodesList.json", d3.autoType);
+            let nodesJSON = await d3.json("data/nodes.geojson", d3.autoType);
+
+            nodesJSON.features.forEach((node) => {
+                node.properties.name = node.properties.name.trim();
+            });
 
             function populateSidebar(id) {
                 const sidebar = document.getElementById('sidebar');
@@ -232,48 +326,125 @@
                 const sidebarHeight = sidebar.offsetHeight;
 
                 let imgWidth = Math.floor(sidebarWidth - 40);
-                let imgHeight = Math.floor((sidebarHeight * 0.33) - 20);
+                let imgHeight = Math.floor((sidebarHeight * 0.66) - 20);
 
                 if (window.innerWidth < 730) {
                     imgWidth = Math.floor(window.innerWidth * 0.79);
-                    imgHeight = Math.floor(window.innerHeight * 0.33);
+                    imgHeight = Math.floor(window.innerHeight * 0.33); 
                 }
 
+                let heightScale = d3.scaleLinear().domain([0, 10]).range([10, imgHeight - 50]);
+
                 var result = devices.find(device => device.device_id == id);
+                var nodesInfo = nodesJSON.features.filter(feature => feature.properties.device_id == id);
+                var resultList = nodesList[id];
 
                 let initialCoords = JSON.parse(result.initial_coords);
                 let finalCoords = JSON.parse(result.final_coords);
                 
                 sidebar.innerHTML = '';
                 sidebar.innerHTML = `
-                    <span id="close-detail" class="hidden">x</span>
+                    <span id="close-detail" class="">x</span>
                     <h1 id="desktop-header">Final Digital Destination</h1>
-                    <p>Device ID: ${id}</p>
-                    <p>Device Type: ${result.device_type}</p>
-                    <p>Recycling Company: ${result.company_name}</p>
-                    <p class="label">Initial Location: ${result.location}</p>
-                    <img
-                    src="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/pin-l-embassy+f74e4e(${initialCoords[0]},${initialCoords[1]})/${initialCoords[0]},${initialCoords[1]},12/${imgWidth}x${imgHeight}?access_token=pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w"
-                    alt="A picture of the area in which this device originated." />
-                    <p class="label">Final Location: ${result.final_location}</p>
-                    <img
-                    src="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/pin-l-embassy+f74e4e(${finalCoords[0]},${finalCoords[1]})/${finalCoords[0]},${finalCoords[1]},12/${imgWidth}x${imgHeight}?access_token=pk.eyJ1IjoidGFtbXktemhhbmciLCJhIjoiY2xod2p1a3NiMGhnaTNybGllMzhkeWx3YyJ9.fvUCg9TLcsZ9Gj-NaBCY8w"
-                    alt="A picture of the area in which this device ended up." />  
+                    <img src="images/${result.device_type}.svg" alt="device icon" id="device-icon" />
+                    <p>Device ${id}, a <span class="bold">${result.device_type}</span>, originated from <span class="bold">${result.location}</span>. It passed through <span class="bold">${resultList.length}</span> locations, including recycler <span class="bold green">${result.company_name}</span>, before reaching its final destination ${getDistance(finalCoords, initialCoords)}</span> miles away in <span class="bold">${result.final_location}</span>.</p>
+                    <p class="reduce-margin-bottom">Route Taken:</p>
+                    <p class="instruction">Click on a location name below to be taken there on the map!</p>
+                    <div id="route-container">
+                        <svg id="route-visualizer"></svg>
+                    </div>
                 `;
 
+                let route = d3.select("#route-visualizer");
+                let routeContainer = d3.select("#route-container");
+                let icon = d3.select("#device-icon");
+
+                route.attr("width", imgWidth)
+                    .attr("height", imgHeight);
                 
+                icon.attr("width", imgWidth * 0.5)
+                    .attr("height", imgWidth * 0.5);
+
+                route.append("g")
+                    .selectAll("circle.location")
+                    .data(resultList)
+                    .join("circle")
+                    .attr("class", "location")
+                    .attr("cx", 0)
+                    .attr("cy", (d, i) => heightScale(i))
+                    .attr("r", 5)
+                    .attr("fill", "white")
+                    .attr("transform", `translate(10, 0)`)
+
+                route.append("line")
+                    .attr("x1", 10)
+                    .attr("y1", heightScale(0))
+                    .attr("x2", 10)
+                    .attr("y2", heightScale(resultList.length - 1))
+                    .attr("stroke", "gray")
+                    .attr("stroke-width", 1)
+                    .lower();
+
+                routeContainer.selectAll("p.location-label")
+                    .data(resultList)
+                    .join("p")
+                    .attr("class", "location-label")
+                    .style("left", "10px")
+                    .style("top", (d, i) => heightScale(i) + "px")
+                    .text(d => d)
+                    .style("color", (d) => {if (d == result.company_name) {return "rgb(158, 244, 158)"} else {return "white"}})
+
+                let locationLabels = d3.selectAll("p.location-label");
+
+
+                function flyToNode(name) {
+                    if (marker) {
+                        marker.remove();
+                    }
+
+                    const nodeInfo = nodesInfo.find(node => node.properties.name == name);
+
+                    marker = new mapboxgl.Marker()
+                        .setLngLat(nodeInfo.geometry.coordinates)
+                        .addTo(map);
+                    map.flyTo({
+                        center: nodeInfo.geometry.coordinates,
+                        zoom: 10
+                    });
+                }
+
+                locationLabels.on("click", function() {
+                    locationLabels.style("text-decoration", "none");
+                    d3.select(this).style("text-decoration", "underline")
+                    flyToNode(this.__data__);
+                });
+
+                d3.select("#close-detail").on("click", function() {
+                d3.select("#sidebar").classed("clicked", false);
+                map.setFilter('routes-highlighted', ['in', 'device_id', '']);
+                        sidebar.innerHTML = `
+                        <p id="close-detail" class="hidden">x</p>
+                        <h1 id="desktop-header">Final Digital Destination</h1>
+                        <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
+                        <p>In 2016, the <a href="https://www.ban.org/">Basel Action Network</a> conducted a <a href="https://wiki.ban.org/images/1/12/ScamRecyclingReport-web.pdf">study</a> where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
+                            which were then delivered to charities, retailers and recyclers across the U.S. Of these tracked devices, 34% were found to be exported offshore—almost all to developing countries.
+                        </p>
+                        <p>Under the Basel Convention, it is illegal for developing countries to import hazardous e-wastes from the
+                            United States. 96% of the offshore exports revealed by BAN's 2016 study were most likely illegal. 
+                        </p>
+                        <p>Track a device by hovering or clicking on a node or path.</p>
+                    `;
+            })
             }
 
             map.on('click', 'routes', (e) => {
                 const feature = e.features[0];
                 populateSidebar(feature.properties.device_id);
                 d3.select("#sidebar").classed("clicked", true);
-                // d3.select("#sidebar").classed("hidden", false);
+                if (marker) {
+                    marker.remove();
+                }
 
-                // if (window.innerWidth < 730) {
-                //     d3.select("#desktop-header").classed("hidden", true);
-                //     d3.select("#close-detail").classed("hidden", false);
-                // }
                 const relatedRoutes = map.querySourceFeatures('routes', {
                     sourceLayer: 'routes',
                     filter: ['in', 'device_id', feature.properties.device_id]
@@ -312,7 +483,7 @@
                     map.setFilter('routes-highlighted', ['in', 'device_id', '']);
                     if (!d3.select("#sidebar").classed("clicked")) {
                         sidebar.innerHTML = `
-                        <span id="close-detail" class="hidden">x</span>
+                        <p id="close-detail" class="hidden">x</p>
                         <h1 id="desktop-header">Final Digital Destination</h1>
                         <p>Where do our devices end up after use? And do e-waste recycling centers always carry out their promises?</p>
                         <p>In 2016, the <a href="https://www.ban.org/">Basel Action Network</a> conducted a <a href="https://wiki.ban.org/images/1/12/ScamRecyclingReport-web.pdf">study</a> where 205 GPS trackers were placed inside of old printers, LCD, and CRT monitors,
@@ -333,7 +504,7 @@
             // ------------ generating nodes ------------
             map.addSource('nodes', {
                 type: 'geojson',
-                data: 'data/nodes_new.geojson'
+                data: 'data/nodes.geojson'
             });
 
             map.addLayer({
@@ -369,7 +540,33 @@
                 return feature;
             }
 
-            fetch('data/edges_new.geojson')
+            var filters = {
+                LCD: ['==', ['get', 'device_type'], 'LCD'],
+                CRT: ['==', ['get', 'device_type'], 'CRT'],
+                Printer: ['==', ['get', 'device_type'], 'Printer']
+            };
+
+            function updateFilters() {
+                var filterArray = ['any'];
+                
+                if (document.getElementById('LCD').checked) {
+                    filterArray.push(filters.LCD);
+                }
+                if (document.getElementById('CRT').checked) {
+                    filterArray.push(filters.CRT);
+                }
+                if (document.getElementById('Printer').checked) {
+                    filterArray.push(filters.Printer);
+                }
+                map.setFilter('routes', filterArray);
+                map.setFilter('nodes-layer', filterArray);
+            }
+
+            document.getElementById('LCD').addEventListener('change', updateFilters);
+            document.getElementById('CRT').addEventListener('change', updateFilters);
+            document.getElementById('Printer').addEventListener('change', updateFilters);
+
+            fetch('data/edges.geojson')
                 .then(response => response.text())
                 .then(data => {
                     map.addLayer({
@@ -382,10 +579,11 @@
                         'layout': { 'line-cap': 'round' },
                         'paint': {
                             'line-color': 'lightgray',
-                            'line-width': 4,
+                            'line-width': 2,
                             'line-opacity': 0.7
                         }
                     });
+                    updateFilters();
 
                     map.addLayer({
                         'id': 'routes-highlighted',
@@ -401,11 +599,8 @@
                         },
                         'filter': ['in', 'device_id', '']
                     });
-
+                    
                 })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-            });
             requestData();
         });
     </script>

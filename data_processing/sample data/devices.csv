@@ -1,0 +1,11 @@
+id,device_id,company_name,location,final_location,initial_coords,final_coords,company_position,device_type,certification,isri_member,misrepresentation_concern,epa_mentions
+1,WA546164,1 Green Planet,"Renton, WA","Hong Kong, New Territories","[-122.19699064903253, 47.49902565156954]","[114.1234, 22.3704]",First,LCD,None,No,Yes,No
+2,OH157467,Accurate IT,"Columbus, OH","Pakistan, Multan","[-83.10375272549389, 39.969208831162504]","[71.456527, 30.188337]",First and Last,CRT,R2,No,No (But discusses BAN's findings of pollution occurring in developing countries),Yes
+3,MA352894,ACT Secured Recycling,"Lawrence, MA","Hong Kong, New Territories","[-71.15304421041003, 42.70884038245311]","[113.981538, 22.453303]",First,Printer,None,No,No,Yes
+4,NV353413,Advance Trading Corp,"Ontario, CA","Hong Kong, New Territories","[-115.16180688119586, 36.149843415024044]","[114.019274, 22.423244]",Last,LCD,"None (No certification at time of export, but became R2 certified ~4 months after handling exported device).",No,Yes,No
+5,CA549390,Advance Trading Corp,"Ontario, CA","Cambodia, Phnom Penharea","[-118.13098919025249, 34.18319568783581]","[104.91787357108755, 11.569222198370339]",Intermediate,LCD,"None (No certification at time of export, but became R2 certified ~4 months after handling exported device).",No,Yes,No
+6,NJ614731,Advanced Recovery Inc (ARI),"Newark, NJ","Hong Kong, New Territories","[-74.1433280275119, 40.800374754822016]","[114.166662, 22.526796]",First,LCD,R2,No,No,Yes
+7,CA552709,AERC Recycling Solutions,"Hayward, CA","Hong Kong, New Territories","[-122.05533117717962, 37.61812962397873]","[114.003833, 22.485871]",First,LCD,R2,Yes,No,Yes
+8,CCA545745,All eWaste*,"Santa Clarita, CA","Hong Kong, New Territories","[-118.541739267885, 34.393247873697874]","[113.9652, 22.447456]",First,LCD,e-Stewards*,No,No,No
+9,MA616330,Allied Computer Brokers,"Amesbury, MA","Hong Kong, New Territories","[-70.94801096873985, 42.8424297205171]","[113.987362, 22.453112]",First,Printer,None,No,Yes,No
+10,IL163523,ARCOA,"Waukegan, IL","Hong Kong, New Territories","[-87.88251900807431, 42.36075574682718]","[114.002787, 22.436384]",First,LCD,R2,Yes,No,No

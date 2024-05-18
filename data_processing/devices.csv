@@ -1,11 +1,91 @@
-id,device_id,company_name,location,final_location,initial_coords,final_coords,company_position,device_type,certification,isri_member,misrepresentation_concern,epa_mentions
-1,WA546164,1 Green Planet,"Renton, WA","Hong Kong, New Territories","[-122.19699064903253, 47.49902565156954]","[114.1234, 22.3704]",First,LCD,None,No,Yes,No
-2,OH157467,Accurate IT,"Columbus, OH","Pakistan, Multan","[-83.10375272549389, 39.969208831162504]","[71.456527, 30.188337]",First and Last,CRT,R2,No,No (But discusses BAN's findings of pollution occurring in developing countries),Yes
-3,MA352894,ACT Secured Recycling,"Lawrence, MA","Hong Kong, New Territories","[-71.15304421041003, 42.70884038245311]","[113.981538, 22.453303]",First,Printer,None,No,No,Yes
-4,NV353413,Advance Trading Corp,"Ontario, CA","Hong Kong, New Territories","[-115.16180688119586, 36.149843415024044]","[114.019274, 22.423244]",Last,LCD,"None (No certification at time of export, but became R2 certified ~4 months after handling exported device).",No,Yes,No
-5,CA549390,Advance Trading Corp,"Ontario, CA","Cambodia, Phnom Penharea","[-118.13098919025249, 34.18319568783581]","[104.91787357108755, 11.569222198370339]",Intermediate,LCD,"None (No certification at time of export, but became R2 certified ~4 months after handling exported device).",No,Yes,No
-6,NJ614731,Advanced Recovery Inc (ARI),"Newark, NJ","Hong Kong, New Territories","[-74.1433280275119, 40.800374754822016]","[114.166662, 22.526796]",First,LCD,R2,No,No,Yes
-7,CA552709,AERC Recycling Solutions,"Hayward, CA","Hong Kong, New Territories","[-122.05533117717962, 37.61812962397873]","[114.003833, 22.485871]",First,LCD,R2,Yes,No,Yes
-8,CCA545745,All eWaste*,"Santa Clarita, CA","Hong Kong, New Territories","[-118.541739267885, 34.393247873697874]","[113.9652, 22.447456]",First,LCD,e-Stewards*,No,No,No
-9,MA616330,Allied Computer Brokers,"Amesbury, MA","Hong Kong, New Territories","[-70.94801096873985, 42.8424297205171]","[113.987362, 22.453112]",First,Printer,None,No,Yes,No
-10,IL163523,ARCOA,"Waukegan, IL","Hong Kong, New Territories","[-87.88251900807431, 42.36075574682718]","[114.002787, 22.436384]",First,LCD,R2,Yes,No,No
+id,device_id,company_name,location,final_location,initial_coords,final_coords,company_position,device_type,certification
+1,WA546164,1 Green Planet,"Renton, WA","Hong Kong, New Territories","[-122.19699064903253, 47.49902565156954]","[114.1234, 22.3704]",First,LCD,None
+2,OH157467,Accurate IT,"Columbus, OH","Pakistan, Multan","[-83.10375272549389, 39.969208831162504]","[71.456527, 30.188337]",First and Last,CRT,R2
+3,MA352894,ACT Secured Recycling,"Lawrence, MA","Hong Kong, New Territories","[-71.15304421041003, 42.70884038245311]","[113.981538, 22.453303]",First,Printer,None
+4,NV353413,Advance Trading Corp,"Ontario, CA","Hong Kong, New Territories","[-115.16180688119586, 36.149843415024044]","[114.019274, 22.423244]",Last,LCD,None
+5,CA549390,Advance Trading Corp,"Ontario, CA","Cambodia, Phnom Penharea","[-118.13098919025249, 34.18319568783581]","[104.91787357108755, 11.569222198370339]",Intermediate,LCD,None
+6,NJ614731,Advanced Recovery Inc (ARI),"Newark, NJ","Hong Kong, New Territories","[-74.1433280275119, 40.800374754822016]","[114.166662, 22.526796]",First,LCD,R2
+7,CA552709,AERC Recycling Solutions,"Hayward, CA","Hong Kong, New Territories","[-122.05533117717962, 37.61812962397873]","[114.003833, 22.485871]",First,LCD,R2
+8,CCA545745,All eWaste*,"Santa Clarita, CA","Hong Kong, New Territories","[-118.541739267885, 34.393247873697874]","[113.9652, 22.447456]",First,LCD,e-Stewards
+9,MA616330,Allied Computer Brokers,"Amesbury, MA","Hong Kong, New Territories","[-70.94801096873985, 42.8424297205171]","[113.987362, 22.453112]",First,Printer,None
+10,IL163523,ARCOA,"Waukegan, IL","Hong Kong, New Territories","[-87.88251900807431, 42.36075574682718]","[114.002787, 22.436384]",First,LCD,R2
+11,CA551248,Attan Recycling Corp,"Chino, CA","Taiwan, Taoyuan City","[-117.709278, 34.000353]","[121.11437638892617, 25.03978062110914]",First and Last,CRT,None
+12,CA549390-1,Attan Recycling Corp,"Chino, CA","Cambodia, Phnom Penh area","[-118.13098919025249, 34.18319568783581]","[104.91787357108755, 11.569222198370339]",First,LCD,None
+13,OH166039,Avnet,"Groveport, OH","China, Guiyu area","[-81.94117128986848, 40.843940187671436]","[116.35186285034011, 23.317118673866133]",Intermediate,Printer,R2
+14,NV353470,Blind Center of Nevada,"Las Vegas, NV","Mexico, Mexicali area.","[-115.12544977474842, 36.182627312764446]","[-115.4474774140139, 32.625484622186505]",First and Last,CRT,R2
+15,CA542981,"Blue Star Electronics, LLC (Hayward Ewaste)","Hayward, CA","Hong Kong, New Territories","[-118.27227387561584, 33.89367947808764]","[114.016853, 22.429514]",Intermediate,LCD,None
+16,CA540894,"Blue Star Electronics, LLC (Hayward Ewaste)","Hayward, CA","Hong Kong, New Territories","[-122.054587, 37.620382]","[114.016853, 22.429514]",First,LCD,None
+17,CA530101,Cal Micro Recycling,"Ontario, CA","Hong Kong, New Territories","[-117.680484, 34.061649]","[114.155034, 22.511]",First,Printer,R2
+18,CA544961,"Cal State Electronic Recycling (CSER, Inc.)","San Marcos, CA","Thailand, Bangkok area","[-117.20229057488113, 33.15989915512284]","[101.24776639531811, 13.203325658718075]",First and Last,LCD,None
+19,CA552287,"Cal State Electronic Recycling (CSER, Inc.)","San Marcos, CA","Hong Kong, New Territories","[-118.17193900780762, 33.90591527645441]","[114.020101, 22.455844]",Intermediate,LCD,None
+20,IL162640,Chicago Surplus Computer (CSC),"Chicago, IL","Pakistan, Faisalabad","[-88.02316404563412, 41.91149880787909]","[73.10027179447447, 31.43342649804699]",First,CRT,None
+21,IL163424,Chicago Surplus Computer (CSC),"Chicago, IL","United Arab Emirates, Dubai","[-88.02316404563412, 41.91149880787909]","[55.267246979062115, 25.196253004161264]",First,LCD,None
+22,IL616231,Chicago Surplus Computer (CSC),"Chicago, IL","Pakistan, Faisalabad","[-88.02316404563412, 41.91149880787909]","[73.077023, 31.417952]",First and Last,CRT,None
+23,IL616371,Chicago Surplus Computer (CSC),"Chicago, IL","Hong Kong, New Territories","[-88.02316404563412, 41.91149880787909]","[114.166338, 22.528651]",First and Last,LCD,None
+24,MA353454,CRT Recycling,"Brockton, MA","Pakistan, Samundri","[-71.01570121785039, 42.094003965195554]","[72.973192, 31.057368]",First and Last,CRT,R2
+25,MA616041,Earthworm Recycling,"Somerville, MA","Hong Kong, New Territories","[-71.08101885910216, 42.37685645102985]","[113.981578, 22.453373]",First,Printer,None
+26,OR356028,Ecobinary LLC,"Beaverton, OR","Hong Kong, New Territories","[-122.79801104359764, 45.37786787846321]","[114.074766, 22.485588]",First,LCD,None
+27,NY615597,ecoTech Management,"Holbrook, NY","Hong Kong, New Territories","[-73.79838840328851, 42.251235954251555]","[113.965548, 22.447177]",Intermediate,Printer,R2
+28,IL163523,ECR World,"Chino, CA","Hong Kong, New Territories","[-87.89594854561076, 42.36255066366812]","[114.002787, 22.436384]",Last,LCD,R2
+29,CA356242,Electronics Recycling Services INC dba Green E-Waste Recycling Center,"San Jose, CA","Hong Kong, New Territories","[-121.8835324323347, 37.4109175282768]","[114.05527, 22.48053]",First and Last,LCD,None
+30,CA552287,e-Recycling of California,"Irvine, CA","Hong Kong, New Territories","[-118.17193900780762, 33.90591527645441]","[114.020101, 22.455844]",First,LCD,e-Stewards
+31,NJ616173,eRevival LLC,"Garfield, NJ","Hong Kong, New Territories","[-74.16453779313935, 40.934937869267486]","[114.039361, 22.424206]",First and Last,CRT,R2
+32,OH160248,E-Scrap Solutions,"Cleveland, OH","Hong Kong, New Territories","[ -81.63720224565351, 41.533303902571625]","[113.987396, 22.441442]",First,LCD,R2
+33,Geo-Force3039211,E-Tech Management,"Columbus, OH","Hong Kong, New Territories","[-82.89519603224198, 39.933038225162086]","[114.13932, 22.52876]",First and Last,Printer,None
+34,OH154449,E-Tech Management,"Columbus, OH","Canada, Barrie","[-82.89519603224198, 39.933038225162086]","[-79.70664943492216, 44.37694703889162]",First and Last,CRT,None
+35,OH356309,"e-Waste, LLC","Hudson, OH","Hong Kong, New Territories","[-81.45196918006177, 41.2054421337725]","[114.110072, 22.484294]",First,LCD,R2
+36,CA543948,EWC Group Recyclers (eWaste Center),"Commerce, CA","Hong Kong, New Territories","[-118.29210423251484, 34.0555174731558]","[113.992414, 22.457417]",First and Last,Printer,None
+37,WA546164-1,EWC Group Recyclers (eWaste Center),"Tukwila, WA","Hong Kong, New Territories","[-122.19699064903253, 47.49902565156954]","[114.016853, 22.429514]",Last,LCD,None
+38,CA551412,EZPC,"Santa Ana, CA","China, Guiyu area (via Hong Kong, New Territories)","[-117.90344667485614, 33.74834075677473]","[116.35186285034011, 23.317118673866133]",First,Printer,None
+39,OR350062,Far West Recycling,"Portland, OR","Taiwan, Longling (via Hong Kong, New Territories)","[-122.53192354543962, 45.557886034463884]","[120.549053, 24.177365]",First,LCD,None
+40,OR350062-1,Golden Valley Trading,"Chino, CA","Taiwan, Longling ","[-122.53192354543962, 45.557886034463884]","[120.549053, 24.177365]",Last,LCD,None
+41,NV356143,Golden Valley Trading,"Chino, CA","Hong Kong, New Territories","[-115.10299585638576, 36.09908045887009]","[113.967369, 22.451292]",Last,Printer,None
+42,OH161584,Golden Valley Trading,"Chino, CA","Hong Kong, New Territories","[-84.17872806089301, 40.5662581326352]","[114.025677, 22.445332]",Last,LCD,None
+43,MI163325,Golden Valley Trading,"Chino, CA","Taiwan, Houlong Township","[-83.25728516093089, 42.818479019745695]","[120.7868651544842, 24.616750921742554]",Last,LCD,None
+44,MA616041-1,Good Point Recycling,"Middlebury, VT","Hong Kong, New Territories","[-71.08101885910216, 42.37685645102985]","[113.981578, 22.453373]",Intermediate,Printer,R2
+45,MI163960,Great Lakes Recycling,"Oak Park, MI","Taiwan (via Hong Kong, New Territories)","[-83.19854358978417, 42.486652806633444]","[120.820191, 24.632458]",Intermediate,LCD,None
+46,MI158911,Green Earth Electronics Recycling,"St Joseph, MI","Taiwan (via Hong Kong, New Territories)","[-86.43773283213523, 42.04325723888122]","[120.88265, 24.664352]",First,LCD,None
+47,MA348371,Green Network Exchange (H&K E-Cycle International),"Woburn, MA",China Guangzhou,"[-71.14129367443925, 42.50666560832454]","[113.12414400382127, 23.02264968162818]",First and Last,CRT,None
+48,MI167110,Green Tech Recyclers,"Oak Park, MI",Canada,"[-86.43883513213524, 42.04316010656363]","[-79.69078783205994, 44.39150219602071]",First and Last,CRT,None
+49,CA530101,Growan Inc,"South El Monte, CA","Hong Kong, New Territories","[-117.68010936135055, 34.06146181400116]","[114.155034, 22.511]",Last,Printer,None
+50,CA545349,IMS Recycling,"Poway, CA","China, Guiyu area","[-117.0531118037263, 32.93979686950283]","[116.35186285034011, 23.317118673866133]",First and Last,Printer,R2
+51,OH160545,Inline Computer Recycling,"Akron, OH","China Guanyao-chong area (via Hong Kong, New Territories)","[-81.52697090307993, 41.056113427244746]","[113.079272, 23.255857]",First,LCD,None
+52,IL166286,Intercon Solutions,"Chicago Heights, IL","Mexico, Matamoros","[-87.7448102321429, 41.89524652981661]","[-97.544914, 25.881682]",Intermediate,CRT,R2
+53,WA551396,Interconnection,"Seattle, WA","Hong Kong, New Territories","[-122.34354971833831, 47.649363954151255]","[114.016853, 22.429514]",First,LCD,R2
+54,CCA545745,IQA Metals,"Chino, CA","Hong Kong, New Territories","[-118.541739267885, 34.393247873697874]","[113.9652, 22.447456]",Last,Printer,None
+55,CA540910,ITAD Solutions,"San Francisco, CA","China Guangdong (via Hong Kong, New Territories & Vietnam)","[-122.399794, 37.644729]","[113.2521306963394, 23.192897840407607]",First,Printer,R2
+56,OH161584-1,J&D Recyclers,"Sidney, OH","Hong Kong, New Territories","[-84.17872806089301, 40.5662581326352]","[114.025677, 22.445332]",Intermediate,LCD,None
+57,MA353728,M&K Recovery Group,"North Andover, MA","China Guang-dong (via Hong Kong, New Territories)","[-71.11042370326726, 42.65909397116672]","[113.015697, 23.646378]",First,Printer,R2
+58,NY616561,Maven Technologies,"Rochester, NY","Hong Kong, New Territories","[-77.6616464167327, 43.16640782055266]","[113.982868, 22.459235]",First,LCD,R2
+59,MA356275,Miller Recycling,"Mansfield, MA","Hong Kong, New Territories","[ -71.23977108795685, 42.014542999971184]","[114.133333, 22.333333]",First,Printer,None
+60,NJ613527,Monmouth Wire & Computer,"Tinton Falls, NJ","Hong Kong, New Territories","[-74.11164773222721, 40.23100748057729]","[114.016853, 22.429514]",First and Last,Printer,R2
+61,NY615597,Mr. E-Waste,"Hudson, NY","Hong Kong, New Territories","[-73.79838840328851, 42.251235954251555]","[113.965548, 22.447177]",First,Printer,None
+62,NV353413,Nevada State Recycling,"Las Vegas, NV","Hong Kong, New Territories","[-115.16180688119586, 36.149843415024044]","[114.019274, 22.423244]",First,LCD,None
+63,NJ616264,Newtech Recycling Inc,"Somerset, NJ","Hong Kong, New Territories","[-74.55388945496307, 40.540671518385125]","[114.16553, 22.528586]",First and Last,LCD,R2
+64,MI163531,PADNOS,"Wyoming, MI","Hong Kong, New Territories","[-85.4081982878374, 44.27879707107928]","[114.1234, 22.3704]",Intermediate,LCD,None
+65,IL166286-1,PCRR,"Chicago, IL","Mexico, Matamoros","[-87.7448102321429, 41.89524652981661]","[-97.544914, 25.881682]",First,CRT,R2
+66,MA356275-1,Raw Material Recovery Corporation,"Gardner, MA","Hong Kong, New Territories (but returned to Port of Hong Kong)","[ -71.23977108795685, 42.014542999971184]","[114.133333, 22.333333]",Intermediate,Printer,None
+67,OR349759,Recology Oregon Material Recovery,"Portland, OR","Hong Kong, New Territories","[-122.70929548961658, 45.61377267580766]","[113.982363, 22.458612]",First,LCD,None
+68,CA542981-1,Remitek Inc,"Fremont, CA","Hong Kong, New Territories","[-118.27227387561584, 33.89367947808764]","[114.016853, 22.429514]",First,LCD,None
+69,NH353504,RMG Enterprise Incorporated,"Londonderry, NH","Hong Kong, New Territories","[-71.33870083209186, 42.876371333493786]","[113.982363, 22.458503]",First,LCD,R2
+70,OR356457,RS David Recycling,"Clackamas, OR","Mexico, Mexicali","[-122.55784315890067, 45.41681437411923]","[-115.414334, 32.567901]",First,CRT,None
+71,NJ613543,SAMR Inc,"Lakewood, NJ","Hong Kong, New Territories","[-74.15936753223502, 40.075141481210615]","[114.142596, 22.522354]",First and Last,LCD,None
+72,GA161576,Sarah's Trading,"Doraville, GA","Hong Kong, New Territories","[-84.26897834407661, 33.881002132870364]","[114.155149, 22.511108]",First and Last,LCD,None
+73,MI156857,Schupan and Sons Inc,"Kalamazoo, MI","China, Guiyu area","[-85.534863, 42.272238]","[116.35186285034011, 23.317118673866133]",First,LCD,R2
+74,MI163531-1,Schupan and Sons Inc,"Kalamazoo, MI","Hong Kong, New Territories","[-85.4081982878374, 44.27879707107928]","[114.1234, 22.3704]",Intermediate,LCD,R2
+75,FL353546,SEER (Secure Environmental Electronics Recycling),"Tampa, FL",Returned to Port of Hong Kong (via Hong Kong New Territories),"[-82.37648180392094, 27.960981334619493]","[114.133333, 22.333333]",First,LCD,R2
+76,NY615795,Sims Recycling Solutions,"Mahwah, NY","Hong Kong, New Territories","[-74.14727477080817, 41.095064569620966]","[114.20025, 22.531212]",First,LCD,R2
+77,CA540910-1,T Electronics dba Silicon Valley Recycling,"Santa Clara, CA","China, Guangzhou","[-122.399794, 37.644729]","[113.2521306963394, 23.192897840407607]",Last,Printer,None
+78,MA352894-1,TBS Industries,"Philadelphia, PA","Hong Kong, New Territories","[-71.15304421041003, 42.70884038245311]","[113.981538, 22.453303]",Last,Printer,R2
+79,MA353728-1,Techrecyclers LLC,"Elizabeth, NJ","China, Qingyuan","[-71.11042370326726, 42.65909397116672]","[113.015697, 23.646378]",Intermediate,Printer,R2
+80,OR356457-1,Total Reclaim,"Portland, OR","Mexico, Mexicali","[-122.55784315890067, 45.41681437411923]","[-115.414334, 32.567901]",Last,CRT,e-Stewards
+81,OR349759-1,Total Reclaim,"Portland, OR","Hong Kong, New Territories","[-122.70929548961658, 45.61377267580766]","[113.982363, 22.458612]",Last,LCD,e-Stewards
+82,OR356028-1,Total Reclaim,"Seattle, WA","Hong Kong, New Territories","[-122.79801104359764, 45.37786787846321]","[114.074766, 22.485588]",Last,LCD,e-Stewards
+83,CA551321,Tri-Valley Electronic Waste Recycling,"Stockton, CA",Kenya,"[-121.27593836807723, 37.98535658092174]","[36.855495, -1.317222]",First,LCD,None
+84,NV353413-1,TW Recycling,"Los Angeles, CA","Hong Kong, New Territories","[-115.16180688119586, 36.149843415024044]","[114.019274, 22.423244]",Intermediate,LCD,None
+85,IL163424-1,UNITEC Recycling Corporation,"West Chicago, IL","United Arab Emirates, Dubai","[-88.02316404563412, 41.91149880787909]","[55.418836, 25.29782]",Intermediate,LCD,None
+86,NJ615555,Urban Renewal,"Kerney, NY","Dominican Republic, Santiago de los Caballeros","[-74.10522146596637, 40.72742885789958]","[-70.6922537089533, 19.475758773505344]",First,LCD,None
+87,MI157079,Valley City Electronic Recycling,"Kentwood, MI","China, Shangqiu","[-85.59704283023835, 42.90696574648548]","[115.410953, 34.433973]",First,Printer,R2
+88,NH356259,Windfield Alloy,"Lawrence, NH","China, Foshan","[-71.18500145997378, 42.858252420955615]","[113.12414400382127, 23.02264968162818]",First,CRT,e-Stewards
+89,CA549390-2,WTB Electronics Recycling Import & Export,"Santa Ana, CA","Cambodia, Phnom Penh area","[-118.13098919025249, 34.18319568783581]","[104.91787357108755, 11.569222198370339]",Last,LCD,None
+90,NJ615662,Yesterday's Business Computers,"Hillsborough, NJ","Hong Kong, New Territories","[-74.64469641687037, 40.487818290934314]","[113.987466, 22.4531]",First and Last,Printer,None
